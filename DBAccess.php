@@ -24,7 +24,7 @@ class DBAccess {
     */
     private function __construct($ds = []) {
         // Check required parameters.
-        $requires = ["db_name", "host", "user", "password"];
+        $requires = ["db_name", "user", "password"];
         foreach ($requires as $r) {
             if (!isset($ds[$r])) {
                 throw new \Exception("Required parameter hasn't been set.");
@@ -33,7 +33,7 @@ class DBAccess {
 
         // Datasources.
         $dsn = "mysql"
-				.":host=" .$ds["host"]
+				.":host=" .($ds["host"] ?? "localhost")
 				.";dbname=" .$ds["db_name"]
 				.";port=" .($ds["port"] ?? "3306")
 				.";";
