@@ -112,7 +112,7 @@ class DBAccess {
         Fetch result.
     */
     public function fetch() {
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
 
@@ -120,7 +120,7 @@ class DBAccess {
         Fetch All results.
     */
     public function fetchAll() {
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
